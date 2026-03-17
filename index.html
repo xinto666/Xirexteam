@@ -1,0 +1,280 @@
+Это наш состав на ближайщие турниры/праки,это старый состав,очень много комуникации,так что будем сражаться!
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xirex Team | Official Roster</title>
+    <style>
+        :root {
+            --primary: #20B2AA; /* Основной цвет команды (красный неон) */
+            --bg: #0a0a0c;
+            --card-bg: #20B2AA;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Orbitron', sans-serif; /* Подойдет любой футуристичный шрифт */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .team-container {
+            text-align: center;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 10px;
+            color: var(--primary);
+            text-shadow: 0 0 15px var(--primary);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .roster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .player-card {
+            background: var(--card-bg);
+            padding: 25px 15px;
+            border-left: 4px solid var(--primary);
+            transition: 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .player-card:hover {
+            transform: scale(1.05);
+            background: #1f1f25;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .nickname {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .role {
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 8px;
+            height: 8px;
+            background: #00ff00;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #00ff00;
+        }
+    </style>
+</head>
+<body>
+
+<div class="team-container">
+    <h1>Xirex Team</h1>
+    
+    <div class="roster-grid">
+        <div class="player-card">
+            <div class="status"></div>
+            <span class="nickname">xitno</span>
+            <span class="role">Entry / IGL</span>
+        </div>
+        <div class="player-card">
+            <div class="status"></div>
+            <span class="nickname">flai1</span>
+            <span class="role">AWP</span>
+        </div>
+        <div class="player-card">
+            <div class="status"></div>
+            <span class="nickname">mef0mu</span>
+            <span class="role">Rifler</span>
+        </div>
+        <div class="player-card">
+            <div class="status"></div>
+            <span class="nickname">blitznon</span>
+            <span class="role">Lurker</span>
+        </div>
+        <div class="player-card">
+            <div class="status"></div>
+            <span class="nickname">kaze</span>
+            <span class="role">Support</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xirex Team | Hub</title>
+    <style>
+        :root {
+            --primary: #ff3e3e; 
+            --bg: #0a0a0c;
+            --card-bg: #16161a;
+            --text: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Навигация */
+        nav {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--text);
+            padding: 10px 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        /* Контейнер для секций */
+        .content-section {
+            display: none; /* По умолчанию скрыты */
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 50px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block; /* Показываем активную */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { color: var(--primary); text-transform: uppercase; letter-spacing: 5px; }
+
+        /* Стили карточек Ростера */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-bottom: 3px solid var(--primary);
+            border-radius: 5px;
+        }
+
+        /* Таблица матчей/достижений */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        th { color: var(--primary); text-transform: uppercase; }
+
+        .win { color: #00ff00; }
+        .loss { color: #ff4444; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Xirex Team</h1>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" onclick="showSection('roster')">Roster</button>
+        <button class="nav-btn" onclick="showSection('matches')">Матчи</button>
+        <button class="nav-btn" onclick="showSection('achievements')">Достижения</button>
+        <button class="nav-btn" onclick="showSection('about')">Инфо</button>
+    </nav>
+
+    <section id="matches" class="content-section">
+        <h2>Последние игры</h2>
+        <table>
+            <tr><th>Турнир</th><th>Противник</th><th>Результат</th></tr>
+        </table>
+    </section>
+
+    <section id="achievements" class="content-section">
+        <h2>Трофеи</h2>
+        <ul>
+        </ul>
+    </section>
+
+    <section id="about" class="content-section">
+        <h2>О команде</h2>
+        <p>Xirex Team — амбициозный коллектив, стремящийся к вершинам киберспортивного Олимпа. Мы строим игру на дисциплине и доверии.</p>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Скрываем все секции
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(s => s.classList.remove('active'));
+
+            // Убираем активный класс у кнопок
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+
+            // Показываем нужную секцию
+            document.getElementById(sectionId).classList.add('active');
+
+            // Делаем нажатую кнопку активной (визуально)
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
