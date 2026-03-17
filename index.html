@@ -1,5 +1,54 @@
-Это наш состав на ближайщие турниры/праки,это старый состав,очень много комуникации,так что будем сражаться
 <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>XirexTeam | Official Page</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            border: 2px solid #00ffcc;
+            border-radius: 15px;
+            padding: 30px;
+            background: #1a1a1a;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+        }
+        h1 { color: #00ffcc; text-transform: uppercase; letter-spacing: 5px; }
+        .roster {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .player-card {
+            background: #252525;
+            padding: 15px;
+            border-radius: 8px;
+            width: 120px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .player-card:hover { transform: translateY(-5px); border-color: #00ffcc; }
+        .role { font-size: 0.8em; color: #888; }
+        .socials { margin-top: 40px; }
+        a { color: #00ffcc; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>TEAM NAME</h1>
+    <p>Профессиональная киберспортивная организация</p>
+
+   <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +56,9 @@
     <title>Xirex Team | Official Roster</title>
     <style>
         :root {
-            --primary: #800000;
+            --primary: #AFEEEE; /* Основной цвет команды (красный неон) */
             --bg: #0a0a0c;
-            --card-bg: #20B2AA;
+            --card-bg: #16161a;
         }
 
         body {
@@ -56,7 +105,7 @@
 
         .player-card:hover {
             transform: scale(1.05);
-            background: #008B8B;
+            background: #1f1f25;
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
@@ -128,8 +177,8 @@
     <title>Xirex Team | Hub</title>
     <style>
         :root {
-            --primary: #8B0000; 
-            --bg: #800000;
+            --primary: #ff3e3e; 
+            --bg: #0a0a0c;
             --card-bg: #16161a;
             --text: #ffffff;
         }
@@ -237,6 +286,17 @@
         <button class="nav-btn" onclick="showSection('about')">Инфо</button>
     </nav>
 
+    <section id="roster" class="content-section active">
+        <h2>Текущий состав</h2>
+        <div class="grid">
+            <div class="card"><strong>xitno</strong><br><small>Entry / IGL</small></div>
+            <div class="card"><strong>flai1</strong><br><small>AWP</small></div>
+            <div class="card"><strong>mef0mu</strong><br><small>Rifler</small></div>
+            <div class="card"><strong>blitznon</strong><br><small>Lurker</small></div>
+            <div class="card"><strong>kaze</strong><br><small>Support</small></div>
+        </div>
+    </section>
+
     <section id="matches" class="content-section">
         <h2>Последние игры</h2>
         <table>
@@ -247,13 +307,30 @@
     <section id="achievements" class="content-section">
         <h2>Трофеи</h2>
         <ul>
-        </ul>
     </section>
 
     <section id="about" class="content-section">
         <h2>О команде</h2>
-        <p>Xirex Team — амбициозный коллектив, стремящийся к вершинам киберспортивного Олимпа. Мы строим игру на дисциплине и доверии MEF0MU ЕБЛАН.</p>
+        <p>Xirex Team — амбициозный коллектив, стремящийся к вершинам киберспортивного Олимпа. Мы строим игру на дисциплине и доверии.</p>
     </section>
-    
+
+    <script>
+        function showSection(sectionId) {
+            // Скрываем все секции
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(s => s.classList.remove('active'));
+
+            // Убираем активный класс у кнопок
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+
+            // Показываем нужную секцию
+            document.getElementById(sectionId).classList.add('active');
+
+            // Делаем нажатую кнопку активной (визуально)
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
 </body>
 </html>
